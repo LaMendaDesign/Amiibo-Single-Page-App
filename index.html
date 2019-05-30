@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link href="https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700,900|Material+Icons" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/vuetify/dist/vuetify.min.css" rel="stylesheet">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, minimal-ui">
+    <link rel="stylesheet" href="normalize.css">
+    <link rel="stylesheet" href="main.css">
+    <title>Amiibos WebApp</title>
+</head>
+
+<body>
+
+    <div id="App">
+        <v-app>
+            <v-content>
+                <v-container>
+
+                    <div class="first-page" v-if="page == ''">
+                        <img src=" Logo_amiibo.png" alt="logo" class="logo-first-page">
+                        <br>
+                        <div class="welcome pulse" @click="enter">
+                            <span class=" welcome-text">Enter</span>
+                        </div>
+                    </div>
+
+                    <mi-header @llevame="hazNav" v-if="page != ''"></mi-header>
+
+                    <buscador :amiibos="amiibosMostrar" :series="gameSeries" v-if="page == 'principal'"
+                        @amiibo="paginaAmiibo">
+                    </buscador>
+                    <template>
+                        <div class=" text-xs-center paginacion" v-if="page == 'principal'">
+                            <v-pagination v-model="paginaActual" :length="15" :total-visible="5"></v-pagination>
+                        </div>
+                    </template>
+
+                    <about-page v-if="page == 'about'"></about-page>
+
+                    <amiibo-page :esteamiibo="esteAmiiboObjeto" v-if="page == 'detalle'">
+                    </amiibo-page>
+
+
+
+
+                </v-container>
+            </v-content>
+        </v-app>
+
+
+
+    </div>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vuetify/dist/vuetify.js"></script>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script src="main.js"></script>
+</body>
+
+</html>

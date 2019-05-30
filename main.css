@@ -1,0 +1,291 @@
+@import url('https://fonts.googleapis.com/css?family=Dosis:800&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i,800,800i&display=swap');
+*{
+    font-family: 'Open Sans', sans-serif; 
+    font-weight: 600;
+    font-size: 1em;
+    color: grey; 
+    margin: 0px;
+    text-decoration: none;
+    padding: 0px;
+}
+
+a {
+    color: #2962FF;
+
+}
+.separar-nav {
+    padding-top: 10vh;
+}
+p {
+    margin-bottom: .5em;
+    text-indent: 1em;
+    text-align: left;
+}
+
+p.first-p{
+    text-indent: 0px;
+}
+
+h1, h2, h3{
+    font-family: 'Dosis', sans-serif;
+    text-align: center;
+}
+
+h1 {
+    font-size: 3em;
+    font-weight: 700;
+    color: rgb(255, 123, 0);
+    line-height : 1.3em;
+}
+
+h2, h3{
+    font-size: 1.5em;
+    color: #2962FF;
+    line-height : 1.3em;
+    margin-bottom: .5em;
+}
+
+h6 {
+    color: #2962FF;
+  
+}
+
+.container{
+    padding: 0;
+    height: 50px;
+    padding-top: 0px;
+    padding-bottom: 0px;
+}
+
+.v-form{
+    height: 40px;
+}
+
+.layout{
+    height: 40px;
+}
+/****************** FIST-PAGE ********************/
+.first-page {
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.logo-first-page {
+    width: 60vw;
+}
+.welcome {
+    padding: 10px 30px;
+    background-color: #2962FF;
+    border-radius: 10px;
+    width: 35vw;
+    max-width: 200px;
+    display: flex;
+    justify-content: center;
+    font-family: 'Open Sans', sans-serif; 
+    text-indent: 0;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+
+}
+.welcome-text {
+    color: white;
+    margin: 0;
+    letter-spacing: 1px;
+}
+.pulse {
+    animation-name: pulse_animation;
+    animation-duration: 5000ms;
+    transform-origin:70% 70%;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+}
+@keyframes pulse_animation {
+    0% { transform: scale(1); }
+    30% { transform: scale(1); }
+    40% { transform: scale(1.08); }
+    50% { transform: scale(1); }
+    60% { transform: scale(1); }
+    70% { transform: scale(1.05); }
+    80% { transform: scale(1); }
+    100% { transform: scale(1); }
+}
+
+
+
+
+/****************** MI-HEADER ********************/
+
+.logo{
+    width: 100px;
+}
+
+.miheader{
+    position: fixed;
+    height: 10vh;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    background-color: rgb(231, 231, 231);
+    -moz-box-shadow:0 5px 5px rgba(182, 182, 182, 0.75);
+    -webkit-box-shadow: 0 5px 5px rgba(182, 182, 182, 0.75);
+    box-shadow: 0 2px 10px rgba(182, 182, 182, 0.75);
+    z-index: 100;
+}
+
+.menulinks{
+    display: flex;
+    justify-content: space-around;
+}
+
+.menulinks > div{
+    margin-left: 20px;
+    margin-right: 20px;
+}
+
+.menulinks a {
+    font-size: 15px;
+    color: grey;
+}
+.menulinks a:hover {
+    color: #2962FF;
+}
+.menulinks a:active {
+    color: #2962FF;
+}
+
+.contenedor{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    margin-top: 50px;
+}
+
+.tarjetita{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    width: 43%;
+    height: 200px;
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+    transition: all 0.3s cubic-bezier(.25,.8,.25,1);
+    margin-bottom: 15px;
+}
+
+.tarjetita:hover {
+    box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
+  }
+
+.info-tarjetita{
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+}
+
+.info-tarjetita h3{
+    color: #2962FF;
+}
+
+.imgamiibo{
+    width: 60px;
+    height: 100px;
+}
+
+/* _____PAGINACION________ */
+
+.paginacion{
+    width: 100%;
+    margin-bottom: 15px;
+}
+
+/* ___________ */
+.section-link {
+    color: #2962FF;
+    cursor: pointer;
+}
+.section-link:hover {
+    color: grey;
+}
+.section-link:active {
+    color: grey;
+}
+.secciones{
+    -webkit-box-shadow: 0 10px 6px -6px rgb(206, 206, 206);
+       -moz-box-shadow: 0 10px 6px -6px rgb(206, 206, 206);
+            box-shadow: 0 10px 6px -6px rgb(206, 206, 206);
+            padding: 2vh;
+            padding-top: 4vh;
+}
+.resaltado{
+    text-align: center;
+    color: rgb(255, 123, 0);
+    font-style: italic;
+    font-size: 1.5em;
+
+}
+
+.amiibo-image{
+    width: 100%;
+    height: 300px;
+    background-image: url('https://www.nintenderos.com/wp-content/uploads/2018/11/amiibo.jpg');
+    background-size: cover;
+    background-position: center;
+}
+
+.video-set-up-amiibo{
+    width: 100%;
+    height: 300px;
+    margin-bottom: 20px;
+}
+
+.selected-amiibo-page {
+    padding: 2vh;
+    padding-top: 10vh; 
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+}
+.selected-amiibo-page p{
+    text-indent: 0px;
+}
+
+.amiibo-page-image{
+    width: 60vw;
+}
+.info-amiibo{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+  transition: all 0.3s cubic-bezier(.25,.8,.25,1);
+    border-radius: 10px;
+}
+
+.row {
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    margin-bottom: 5px;
+    margin-top: 5px;
+}
+.column {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 48%;
+    /* border: 1px solid #2962FF;
+    border-radius: 10px; */
+    overflow: hidden;
+}
+.column p {
+    text-align: center;
+}
