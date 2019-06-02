@@ -205,7 +205,8 @@ h6 {
     margin-bottom: 15px;
 }
 
-/* ___________ */
+/* _________ABOUT__________ */
+
 .section-link {
     color: #2962FF;
     cursor: pointer;
@@ -244,6 +245,8 @@ h6 {
     height: 300px;
     margin-bottom: 20px;
 }
+
+/* ________SELECTED AMIIBO PAGE_________ */
 
 .selected-amiibo-page {
     padding: 2vh;
@@ -289,3 +292,20 @@ h6 {
 .column p {
     text-align: center;
 }
+
+/*______________CHAT___________*/
+
+.chat{
+    position: relative;
+    padding-top: 10vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 500px;
+
+}
+#inputs {
+    background: red;
+
+}
+

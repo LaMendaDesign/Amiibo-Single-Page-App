@@ -365,9 +365,36 @@ Vue.component('amiibo-page', {
 
         }
     },
+
+});
+
+
+Vue.component('chat', {
+    template: `
+    <div class="chat">
+        <div id="posts" class="box">
+        Loading posts...
+        </div>
+
+        <div class="inputs">
+            <input id="textInput" class="input" type="text" placeholder="Your message..." />
+
+            <button id="login" class="button is-info">Login!</button>
+            <button id="create-post" class="button is-primary">Send</button>
+        </div>
+    </div>
+                
+
+    `,
+    data() {
+        return {
+
+        }
+    },
     methods: {
 
     },
+
 });
 
 
@@ -430,4 +457,80 @@ const vm = new Vue({
         }
     }
 });
+
+// CHAT
+
+document.getElementById("login").addEventListener("click", login);
+document.getElementById("create-post").addEventListener("click", writeNewPost);
+
+getPosts();
+
+function login() {
+    // https://firebase.google.com/docs/auth/web/google-signin
+
+    //Provider
+    var provider = new firebase.auth.GoogleAuthProvider();
+
+    //How to signin
+    firebase.auth().signInWithPopup(provider);
+
+    console.log("login");
+}
+
+function writeNewPost() {
+    // https://firebase.google.com/docs/database/web/read-and-write
+
+    //Values from HTML
+    var text = document.getElementById("textInput").value;
+    var name = firebase.auth().currentUser.displayName;
+
+    var objectToSend = {
+        message: text,
+        author: name
+    };
+
+    // let padre = {};
+    // let fecha = new Date();
+
+    // padre[fecha] = objectToSend;
+
+    // en vez de push, update
+    firebase
+        .database()
+        .ref("basededatos")
+        .push(objectToSend);
+
+    // firebase.database().ref("test").push(objectToSend);
+
+    console.log('send');
+
+    // Values
+}
+
+function getPosts() {
+    //Get messages
+
+    firebase
+        .database()
+        .ref('basededatos')
+        // cuando llega algo a la base de datos ejecutamos...
+        .on('value', function (data) {
+            console.log(data.val());
+            var posts = document.getElementById("posts");
+            posts.innerHTML = "";
+            console.log(data.val());
+            var messages = data.val();
+
+            for (var key in messages) {
+                var text = document.createElement("div");
+                var element = messages[key];
+
+                text.append(element.message);
+                text.append(element.author);
+                posts.append(text);
+            }
+        })
+
+    console.log("getting posts");
+}
 
