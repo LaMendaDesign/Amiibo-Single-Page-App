@@ -14,6 +14,7 @@
     <link rel=icon href=mac.icns sizes="128x128 512x512 8192x8192 32768x32768">
     <link rel=icon href=favicon.png sizes="57x57" type="image/png">
     <link rel=icon href=gnome.svg sizes="any" type="image/svg+xml">
+    <link rel="stylesheet" href="manifest.json">
     <title>Amiibos WebApp</title>
 </head>
 
@@ -23,7 +24,7 @@
         <v-app>
             <v-content>
                 <v-container>
-                    <!-- 
+
                     <div class="first-page" v-if="page == ''">
                         <img src=" Logo_amiibo.png" alt="logo" class="logo-first-page">
                         <br>
@@ -46,9 +47,9 @@
                     <about-page v-if="page == 'about'"></about-page>
 
                     <amiibo-page :esteamiibo="esteAmiiboObjeto" v-if="page == 'detalle'">
-                    </amiibo-page> -->
+                    </amiibo-page>
 
-                    <chat></chat>
+                    <chat v-if="page == 'chat'"></chat>
 
 
 

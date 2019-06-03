@@ -372,6 +372,8 @@ Vue.component('amiibo-page', {
 Vue.component('chat', {
     template: `
     <div class="chat">
+        <button id="login" class="button is-info">Login</button>
+
         <div id="posts" class="box">
         Loading posts...
         </div>
@@ -379,7 +381,6 @@ Vue.component('chat', {
         <div class="inputs">
             <input id="textInput" class="input" type="text" placeholder="Your message..." />
 
-            <button id="login" class="button is-info">Login!</button>
             <button id="create-post" class="button is-primary">Send</button>
         </div>
     </div>
@@ -394,6 +395,12 @@ Vue.component('chat', {
     methods: {
 
     },
+    // created() {
+    //     // login(){
+    //     document.getElementById("login").addEventListener("click", login);
+
+    //     // }
+    // },
 
 });
 
@@ -486,7 +493,7 @@ function writeNewPost() {
 
     var objectToSend = {
         message: text,
-        author: name
+        author: name,
     };
 
     // let padre = {};
