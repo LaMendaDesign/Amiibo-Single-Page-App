@@ -537,13 +537,15 @@ function getPosts() {
                 autor.appendChild(nombreAutor);
 
                 var mensajito = document.createElement('div');
+                mensajito.className += "autor-texto";
                 var elMensaje = document.createTextNode(element.message);
+                mensajito.appendChild(elMensaje);
                 // var element.author = document.createElement('div)');
                 // var element.message = document.createElement('div)');
 
                 // text.append(element.author);
                 text.append(autor);
-                text.append(elMensaje);
+                text.append(mensajito);
 
                 posts.append(text);
             }
