@@ -38,29 +38,29 @@ Vue.component('buscador', {
     template: `
             <div class="separar-nav">
                 
-                <v-form>
+                <v-form class="margenes">
                     <v-container>
-                    <v-layout>
-                        <v-flex
-                        xs12
-                        md4
-                        >
-                            <v-text-field
-                                label="Word Search"
-                                required
-                                v-model="search">
-                            </v-text-field>
+                        <v-layout>
+                            <v-flex
+                            xs12
+                            md4
+                            >
+                                <v-text-field
+                                    label="Word Search"
+                                    required
+                                    v-model="search">
+                                </v-text-field>
 
-                        </v-flex>
+                            </v-flex>
 
-                    </v-layout>
+                        </v-layout>
                     </v-container>
                 </v-form>
                 
-                <v-form>
+                <v-form >
                     <v-container>
-                        <v-layout>
-                            <v-flex xs12 sm6>
+                        <v-layout class="margenes dividir">
+                            <div class="ancho-columna">
                                 <v-select
                                 v-model="selectedType"
                                 :menu-props="{ maxHeight: '400' }"
@@ -70,9 +70,9 @@ Vue.component('buscador', {
                                 >
                         
                                 </v-select>
-                            </v-flex>
+                            </div>
                             
-                            <v-flex xs12 sm6>
+                            <div xs12 sm6 class="ancho-columna">
                                 <v-select
                                 v-model="selectedSerie"
                                 :menu-props="{ maxHeight: '400' }"
@@ -81,15 +81,11 @@ Vue.component('buscador', {
                                 multiple
                                 >
                                 </v-select>
-                            </v-flex>
+                            </div>
                         </v-layout>
                     </v-container>
                 </v-form>
 
-                <div>
-                    
-                    
-                </div>
 
                 <div class="contenedor">
                     <div class="tarjetita" v-for="amiibo in filteredAmiibos" @click="selectAmiibo(amiibo)"> 
@@ -317,8 +313,9 @@ Vue.component('amiibo-page', {
     props: ['esteamiibo'],
     template: `
                 <div class="separar-nav selected-amiibo-page">
-                
-                        <p>Back</p>
+                    <div class="alinear-texto-izquierda">
+                        <p>< Back</p>
+                    </div>
                     
                     <div>
                         <img :src="esteamiibo[0].image" alt="amiibo image" class="amiibo-page-image">
@@ -530,11 +527,24 @@ function getPosts() {
 
             for (var key in messages) {
                 var text = document.createElement("div");
-                text.className += "mensajito";
+                text.className += "grupoMensajito";
+
+
                 var element = messages[key];
 
-                text.append(element.author);
-                text.append(element.message);
+                var autor = document.createElement('div');
+                var nombreAutor = document.createTextNode(element.author);
+                autor.appendChild(nombreAutor);
+
+                var mensajito = document.createElement('div');
+                var elMensaje = document.createTextNode(element.message);
+                // var element.author = document.createElement('div)');
+                // var element.message = document.createElement('div)');
+
+                // text.append(element.author);
+                text.append(autor);
+                text.append(elMensaje);
+
                 posts.append(text);
             }
         })
