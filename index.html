@@ -8,13 +8,10 @@
     <link href="https://cdn.jsdelivr.net/npm/vuetify/dist/vuetify.min.css" rel="stylesheet">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, minimal-ui">
     <link rel="stylesheet" href="normalize.css">
+    <link rel="stylesheet" href="vuetify-v1.0.18.css">
     <link rel="stylesheet" href="main.css">
     <link rel=icon href=favicon.png sizes="16x16" type="image/png">
-    <link rel=icon href=windows.ico sizes="32x32 48x48" type="image/vnd.microsoft.icon">
-    <link rel=icon href=mac.icns sizes="128x128 512x512 8192x8192 32768x32768">
-    <link rel=icon href=favicon.png sizes="57x57" type="image/png">
-    <link rel=icon href=gnome.svg sizes="any" type="image/svg+xml">
-    <link rel="stylesheet" href="manifest.json">
+    <link rel="manifest" href="manifest.json">
     <title>Amiibos WebApp</title>
 </head>
 
@@ -26,10 +23,10 @@
                 <v-container>
 
                     <div class="first-page" v-if="page == ''">
-                        <img src=" Logo_amiibo.png" alt="logo" class="logo-first-page">
+                        <img src="Logo_amiibo.png" alt="logo" class="logo-first-page">
                         <br>
                         <div class="welcome pulse" @click="enter">
-                            <span class=" welcome-text">Enter</span>
+                            <span class="welcome-text">Enter</span>
                         </div>
                     </div>
 
@@ -39,7 +36,7 @@
                         @amiibo="paginaAmiibo">
                     </buscador>
                     <template>
-                        <div class=" text-xs-center paginacion" v-if="page == 'principal'">
+                        <div class="text-xs-center paginacion" v-if="page == 'principal'">
                             <v-pagination v-model="paginaActual" :length="15" :total-visible="5"></v-pagination>
                         </div>
                     </template>
@@ -63,8 +60,12 @@
     </div>
 
 
+
     <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/vuetify/dist/vuetify.js"></script>
+    <!-- <script src="https://cdn.jsdelivr.net/npm/vuetify/dist/vuetify.js"></script>
+    <script src=""></script> -->
+    <script src="vuetify-v1.0.18.js"></script>
+    <script src="vuetify-v1.0.18.js.map"></script>
     <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
     <script src="https://www.gstatic.com/firebasejs/5.8.5/firebase-app.js"></script>
     <script src="https://www.gstatic.com/firebasejs/5.9.1/firebase-auth.js"></script>
@@ -83,7 +84,6 @@
         // Initialize Firebase
         firebase.initializeApp(firebaseConfig);
     </script>
-    <!-- <script src="chat.js" type="text/javascript"></script> -->
     <script src="main.js" type="text/javascript"></script>
 </body>
 

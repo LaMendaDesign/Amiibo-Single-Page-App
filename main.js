@@ -1,3 +1,5 @@
+
+
 const header = Vue.component('mi-header', {
     template: `
             <div class="miheader">
@@ -29,7 +31,7 @@ const header = Vue.component('mi-header', {
             this.$emit('llevame', this.active);
         },
     },
-})
+});
 
 Vue.component('buscador', {
     props: ['amiibos', 'series'],
@@ -315,9 +317,9 @@ Vue.component('amiibo-page', {
     props: ['esteamiibo'],
     template: `
                 <div class="separar-nav selected-amiibo-page">
-                    <div class="alinear-izquierda-texto">
+                
                         <p>Back</p>
-                    </div>
+                    
                     <div>
                         <img :src="esteamiibo[0].image" alt="amiibo image" class="amiibo-page-image">
                     </div>
@@ -528,10 +530,11 @@ function getPosts() {
 
             for (var key in messages) {
                 var text = document.createElement("div");
+                text.className += "mensajito";
                 var element = messages[key];
 
-                text.append(element.message);
                 text.append(element.author);
+                text.append(element.message);
                 posts.append(text);
             }
         })
