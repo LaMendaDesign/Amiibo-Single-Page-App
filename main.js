@@ -316,7 +316,7 @@ Vue.component('amiibo-page', {
     template: `
                 <div class="separar-nav selected-amiibo-page">
                     <div class="alinear-izquierda-texto">
-                        <p>< Back</p>
+                        <p>Back</p>
                     </div>
                     <div>
                         <img :src="esteamiibo[0].image" alt="amiibo image" class="amiibo-page-image">
