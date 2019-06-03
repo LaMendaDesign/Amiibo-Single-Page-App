@@ -9,7 +9,9 @@
     text-decoration: none;
     padding: 0px;
 }
-
+html {
+    scroll-behavior: smooth;
+  }
 a {
     color: #2962FF;
 
@@ -251,9 +253,11 @@ h6 {
 
 .selected-amiibo-page {
     padding: 2vh;
-    padding-top: 10vh; 
+    padding-top: 13vh; 
+    height: 100vh;
     display: flex;
     flex-direction: column;
+    justify-content: space-between;
     align-items: center;
     width: 100%;
 }
@@ -265,6 +269,7 @@ h6 {
     width: 60vw;
 }
 .info-amiibo{
+    background-color: #fff;
     display: flex;
     flex-direction: column;
     width: 100%;

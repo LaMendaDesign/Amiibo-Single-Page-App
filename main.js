@@ -315,13 +315,17 @@ Vue.component('amiibo-page', {
     props: ['esteamiibo'],
     template: `
                 <div class="separar-nav selected-amiibo-page">
-                    <p>Back</p>
+                    <div class="alinear-izquierda-texto">
+                        <p>< Back</p>
+                    </div>
                     <div>
                         <img :src="esteamiibo[0].image" alt="amiibo image" class="amiibo-page-image">
                     </div>
-                    <h2>{{esteamiibo[0].character}}</h2>
+
+                    
 
                     <div class="info-amiibo">
+                        <h2>{{esteamiibo[0].character}}</h2>
                         <div class="row"> 
                             <div class="column"> 
                                 <h6>Amiibo Series</h6>
@@ -395,12 +399,6 @@ Vue.component('chat', {
     methods: {
 
     },
-    // created() {
-    //     // login(){
-    //     document.getElementById("login").addEventListener("click", login);
-
-    //     // }
-    // },
 
 });
 
@@ -496,16 +494,16 @@ function writeNewPost() {
         author: name,
     };
 
-    // let padre = {};
-    // let fecha = new Date();
+    let padre = {};
+    let fecha = new Date();
 
-    // padre[fecha] = objectToSend;
+    padre[fecha] = objectToSend;
 
     // en vez de push, update
     firebase
         .database()
         .ref("basededatos")
-        .push(objectToSend);
+        .update(padre);
 
     // firebase.database().ref("test").push(objectToSend);
 
