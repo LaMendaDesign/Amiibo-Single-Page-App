@@ -20,38 +20,38 @@
     <div id="App">
         <v-app>
             <v-content>
-                <v-container>
+                <!-- <v-container> -->
 
-                    <div class="first-page" v-if="page == ''">
-                        <img src="Logo_amiibo.png" alt="logo" class="logo-first-page">
-                        <br>
-                        <div class="welcome pulse" @click="enter">
-                            <span class="welcome-text">Enter</span>
-                        </div>
+                <div class="first-page" v-if="page == ''">
+                    <img src="Logo_amiibo.png" alt="logo" class="logo-first-page">
+                    <br>
+                    <div class="welcome pulse" @click="enter">
+                        <span class="welcome-text">Enter</span>
                     </div>
+                </div>
 
-                    <mi-header @llevame="hazNav" v-if="page != ''"></mi-header>
+                <mi-header @llevame="hazNav" v-if="page != ''"></mi-header>
 
-                    <buscador :amiibos="amiibosMostrar" :series="gameSeries" v-if="page == 'principal'"
-                        @amiibo="paginaAmiibo">
-                    </buscador>
-                    <template>
-                        <div class="text-xs-center paginacion" v-if="page == 'principal'">
-                            <v-pagination v-model="paginaActual" :length="15" :total-visible="5"></v-pagination>
-                        </div>
-                    </template>
+                <buscador :amiibos="amiibosMostrar" :series="gameSeries" v-if="page == 'principal'"
+                    @amiibo="paginaAmiibo">
+                </buscador>
+                <template>
+                    <div class="text-xs-center paginacion" v-if="page == 'principal'">
+                        <v-pagination v-model="paginaActual" :length="15" :total-visible="5"></v-pagination>
+                    </div>
+                </template>
 
-                    <about-page v-if="page == 'about'"></about-page>
+                <about-page v-if="page == 'about'"></about-page>
 
-                    <amiibo-page :esteamiibo="esteAmiiboObjeto" v-if="page == 'detalle'">
-                    </amiibo-page>
+                <amiibo-page :esteamiibo="esteAmiiboObjeto" v-if="page == 'detalle'">
+                </amiibo-page>
 
-                    <chat v-show="page == 'chat'"></chat>
-
-
+                <chat v-show="page == 'chat'"></chat>
 
 
-                </v-container>
+
+
+                <!-- </v-container> -->
             </v-content>
         </v-app>
 
@@ -62,8 +62,7 @@
 
 
     <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
-    <!-- <script src="https://cdn.jsdelivr.net/npm/vuetify/dist/vuetify.js"></script>
-    <script src=""></script> -->
+    <script src="https://cdn.jsdelivr.net/npm/vue-chat-scroll/dist/vue-chat-scroll.min.js"></script>
     <script src="vuetify-v1.0.18.js"></script>
     <script src="vuetify-v1.0.18.js.map"></script>
     <script src="https://unpkg.com/axios/dist/axios.min.js"></script>

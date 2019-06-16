@@ -377,7 +377,7 @@ Vue.component('chat', {
     <div class="chat">
         <button id="login" class="button is-info">Login</button>
 
-        <div id="posts" class="box">
+        <div id="posts" class="box" v-chat-scroll="{always: false, smooth: true, scrollonremoved:true}">
         Loading posts...
         </div>
 
@@ -509,6 +509,7 @@ function writeNewPost() {
     console.log('send');
 
     // Values
+
 }
 
 function getPosts() {
@@ -533,11 +534,12 @@ function getPosts() {
                 var element = messages[key];
 
                 var autor = document.createElement('div');
+                autor.className += "autor-nombre"
                 var nombreAutor = document.createTextNode(element.author);
                 autor.appendChild(nombreAutor);
 
                 var mensajito = document.createElement('div');
-                mensajito.className += "autor-texto";
+                mensajito.className += "mensajito-texto";
                 var elMensaje = document.createTextNode(element.message);
                 mensajito.appendChild(elMensaje);
                 // var element.author = document.createElement('div)');

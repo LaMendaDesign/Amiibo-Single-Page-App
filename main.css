@@ -197,11 +197,12 @@ h6 {
 }
 
 .info-tarjetita h3{
+    margin-top: 5px;
     color: #2962FF;
 }
 
 .imgamiibo{
-    width: 60px;
+    width: auto;
     height: 100px;
 }
 
@@ -327,7 +328,8 @@ h6 {
 .box{
     padding: 10px;
     background-color: white;
-    height: 80%;
+    max-height: 65vh;
+    overflow: scroll;
     color: #2962FF;
     border-top-right-radius: 10px;
     border-top-left-radius: 10px;
@@ -349,10 +351,15 @@ h6 {
     margin-bottom: 10px;
 }
 
-.autor-texto {
+.mensajito-texto {
     color: #2962FF;
+    font-weight: bold;
 }
 
+.autor-nombre{
+    color: rgb(160, 160, 160);
+    font-size: .8em;
+}
 .inputs {
     height: 8vh;
     background: white;;
